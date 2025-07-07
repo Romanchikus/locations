@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "locations-api"
+version = "0.1.0"
+description = "FastAPI application with SQLite database"
+authors = ["Romanchikus <roman.obednyak13@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.14"
+fastapi = "^0.104.1"
+uvicorn = {extras = ["standard"], version = "^0.24.0"}
+sqlalchemy = "^2.0.23"
+alembic = "^1.12.1"
+pydantic = "^2.4.2"
+pydantic-settings = "^2.0.3"
+python-dotenv = "^1.0.0"
+python-multipart = "^0.0.6"
+openai = "^1.93.0"
+numpy = "1.26.4"
+folium = "^0.20.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+black = "^23.10.1"
+flake8 = "^6.1.0"
+mypy = "^1.6.1"
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]
+asyncio_mode = "auto"
+
+[tool.flake8]
+max-line-length = 85
